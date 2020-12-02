@@ -152,6 +152,25 @@ const textToLang = (text, language, minimal) => {
           .map((a) => `fmt.Println(\"${a}\")`)
           .join("\n\t")}\n}`;
       }
+    case "Ruby":
+      if (minimal) {
+        return `puts\"${text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .join("\\n")}\"`;
+      } else {
+        return text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .map((a) => `puts \"${a}\"`)
+          .join("\n");
+      }
   }
 };
 

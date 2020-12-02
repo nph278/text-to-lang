@@ -32,6 +32,7 @@ const questions = [
       "C#",
       "C",
       "Go",
+      "Ruby",
     ],
     default: "JavaScript",
   },
