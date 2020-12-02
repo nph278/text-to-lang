@@ -1,6 +1,6 @@
 import arg from "arg";
 import inquirer from "inquirer";
-import { readFile } from "fs/promises";
+import { promises } from "fs";
 import textToLang from "./textToLang";
 
 const parseArguments = (rawArgs) => {
@@ -51,7 +51,7 @@ export async function cli(args) {
   options.minimal = answers.minimal;
   console.log(
     textToLang(
-      (await readFile(options.file)).toString(),
+      (await promises.readFile(options.file)).toString(),
       options.language,
       options.minimal
     )
