@@ -95,6 +95,25 @@ const textToLang = (text, language, minimal) => {
           .map((a) => `System.out.println(\"${a}\");`)
           .join("\n\t\t")}\n\t}\n}`;
       }
+    case "C#":
+      if (minimal) {
+        return `class PrintText{static void Main(){\n\t\tSystem.Console.WriteLine(\"${text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .join("\\n")}\");}}`;
+      } else {
+        return `class PrintText {\n\tstatic void Main(string[] args)\n{${text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .map((a) => `System.Console.WriteLine(\"${a}\");`)
+          .join("\n\t\t")}\n\t}\n}`;
+      }
   }
 };
 
