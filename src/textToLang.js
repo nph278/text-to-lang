@@ -38,6 +38,44 @@ const textToLang = (text, language, minimal) => {
           .map((a) => `\tstd::cout << \"${a}\" << \"\\n\";`)
           .join("\n")}\n\treturn 0;\n}`;
       }
+    case "Python 3":
+      if (minimal) {
+        return `print(\"${text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .join("\\n")}\")`;
+      } else {
+        return text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .map((a) => `print(\"${a}\")`)
+          .join("\n");
+      }
+    case "Python 2":
+      if (minimal) {
+        return `print \"${text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .join("\\n")}\"`;
+      } else {
+        return text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .map((a) => `print \"${a}\"`)
+          .join("\n");
+      }
   }
 };
 
