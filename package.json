@@ -1,0 +1,26 @@
+{
+  "name": "text-to-lang",
+  "version": "1.0.0",
+  "description": "A tool for converting text into programs that print them.",
+  "main": "src/index.js",
+  "bin": {
+    "text-to-lang": "bin/text-to-lang"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "text-to-lang"
+  ],
+  "author": "NPH",
+  "license": "MIT",
+  "dependencies": {
+    "arg": "^5.0.0",
+    "esm": "^3.2.18",
+    "inquirer": "^7.3.3"
+  },
+  "files": [
+    "bin/",
+    "src/"
+  ]
+}
