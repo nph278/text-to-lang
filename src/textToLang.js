@@ -76,6 +76,25 @@ const textToLang = (text, language, minimal) => {
           .map((a) => `print \"${a}\"`)
           .join("\n");
       }
+    case "Java":
+      if (minimal) {
+        return `class PrintText(){public static void main(String[] args){\n\t\tSystem.out.println(\"${text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .join("\\n")}\");}}`;
+      } else {
+        return `class PrintText() {\n\tpublic static void main(String[] args) {${text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .map((a) => `System.out.println(\"${a}\");`)
+          .join("\n\t\t")}\n\t}\n}`;
+      }
   }
 };
 
