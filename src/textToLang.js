@@ -78,7 +78,7 @@ const textToLang = (text, language, minimal) => {
       }
     case "Java":
       if (minimal) {
-        return `class PrintText(){public static void main(String[] args){\n\t\tSystem.out.println(\"${text
+        return `class PrintText{public static void main(String[] args){\n\t\tSystem.out.println(\"${text
           .split("\\")
           .join("\\\\")
           .split('"')
@@ -86,7 +86,7 @@ const textToLang = (text, language, minimal) => {
           .split("\n")
           .join("\\n")}\");}}`;
       } else {
-        return `class PrintText() {\n\tpublic static void main(String[] args) {${text
+        return `class PrintText {\n\tpublic static void main(String[] args) {${text
           .split("\\")
           .join("\\\\")
           .split('"')
