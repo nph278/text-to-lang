@@ -15,3 +15,15 @@ Currently only supports a few languages, but more will be added.
 or
 
 `text-to-lang --file file`
+
+## Languages
+
+The languages that are currently implemented are:
+
+- JavaScript
+- C++
+- Python 3
+- Python 2
+- Java
+- C#
+- C
