@@ -97,7 +97,7 @@ const textToLang = (text, language, minimal) => {
       }
     case "C#":
       if (minimal) {
-        return `class PrintText{static void Main(){\n\t\tSystem.Console.WriteLine(\"${text
+        return `class PrintText{static void Main(){System.Console.WriteLine(\"${text
           .split("\\")
           .join("\\\\")
           .split('"')
