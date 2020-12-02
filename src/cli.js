@@ -23,7 +23,7 @@ const questions = [
     type: "list",
     name: "language",
     message: "Choose which language to use",
-    choices: ["JavaScript", "C++", "Python 3", "Python 2", "Java", "C#"],
+    choices: ["JavaScript", "C++", "Python 3", "Python 2", "Java", "C#", "C"],
     default: "JavaScript",
   },
   {

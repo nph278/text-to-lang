@@ -114,6 +114,25 @@ const textToLang = (text, language, minimal) => {
           .map((a) => `System.Console.WriteLine(\"${a}\");`)
           .join("\n\t\t")}\n\t}\n}`;
       }
+    case "C":
+      if (minimal) {
+        return `#include <stdio.h>\nint main(){printf(\"${text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .join("\\n")}\\n\");return 0;}`;
+      } else {
+        return `#include <stdio.h>\n\nint main() {\n${text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .map((a) => `\tprintf(\"${a}\\n\");`)
+          .join("\n")}\n\treturn 0;\n}`;
+      }
   }
 };
 
