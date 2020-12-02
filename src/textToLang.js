@@ -133,6 +133,25 @@ const textToLang = (text, language, minimal) => {
           .map((a) => `\tprintf(\"${a}\\n\");`)
           .join("\n")}\n\treturn 0;\n}`;
       }
+    case "Go":
+      if (minimal) {
+        return `package main;import"fmt";func main(){fmt.Println(\"${text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .join("\\n")}\")}`;
+      } else {
+        return `package main\n\nimport \"fmt\"\n\nfunc main() {\n\t${text
+          .split("\\")
+          .join("\\\\")
+          .split('"')
+          .join('\\"')
+          .split("\n")
+          .map((a) => `fmt.Println(\"${a}\")`)
+          .join("\n\t")}\n}`;
+      }
   }
 };
 
