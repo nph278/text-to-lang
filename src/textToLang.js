@@ -105,7 +105,7 @@ const textToLang = (text, language, minimal) => {
           .split("\n")
           .join("\\n")}\");}}`;
       } else {
-        return `class PrintText {\n\tstatic void Main(string[] args)\n{${text
+        return `class PrintText {\n\tstatic void Main()\n{${text
           .split("\\")
           .join("\\\\")
           .split('"')
