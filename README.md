@@ -7,3 +7,11 @@ Currently only supports a few languages, but more will be added.
 ## Installation
 
 `npm install -g text-to-lang`
+
+## Usage
+
+`text-to-lang -f file`
+
+or
+
+`text-to-lang --file file`
