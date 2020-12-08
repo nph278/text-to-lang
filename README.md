@@ -27,3 +27,5 @@ The languages that are currently implemented are:
 - Java
 - C#
 - C
+- Go
+- Ruby
